@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <title>Home - PontoGelado</title>
 </head>
 <body>
@@ -14,12 +15,26 @@
         <nav class="navbar">
             <h3 id="logo">Ponto Gelado</h3>
             <form name="searchform" class="searchform" action="search" method="get">
-                <input name="searchquery" id="inputsearch" type="text" placeholder="Search...">
-                <input class="searchbutton" onmouseover="highlightsearch(this, true)" onmouseout="highlightsearch(this, false)" type="image" src="../static/images/search.png" alt="Search">
+                <input name="searchquery" id="inputsearch" type="text" placeholder="Click Here to Search...">
+                <input class="searchbutton" onmouseover="highlightsearch(this, true, 'search')" onmouseout="highlightsearch(this, false, 'search')" type="image" src="../static/images/search.png" alt="Search">
+                
             </form>
-            <input type="image" src="" alt="">
+            <input type="image" class="cartbutton" onmouseover="highlightsearch(this, true, 'cart')" onmouseout="highlightsearch(this, false, 'cart')" src="../static/images/cart.png" alt="">
         </nav>
-        
+        <div class="content">
+            <img class="welcomeimg" src="../static/images/image1.png" />
+            <p id="Welcometext">Ponto Gelado</p>
+            <p id="Welcometext2">Welcome to Polar's Safe Store</p>
+            <div class="curiosidadescontainer">
+                <div class="box">
+                    <p>Title</p>
+                    <p>Description</p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+
+        </footer>
     </div>
     <script src="{% static 'home.js'%}"></script>
 </body>
