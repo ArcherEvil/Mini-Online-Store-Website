@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>Home - PontoGelado</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h3 id="logo">Ponto Gelado</h3>
+            <form name="searchform" class="searchform" action="search" method="get">
+                <input name="searchquery" id="inputsearch" type="text" placeholder="Search...">
+                <input class="searchbutton" onmouseover="highlightsearch(this, true)" onmouseout="highlightsearch(this, false)" type="image" src="../static/images/search.png" alt="Search">
+            </form>
+            <input type="image" src="" alt="">
+        </nav>
+        
+    </div>
+    <script src="{% static 'home.js'%}"></script>
+</body>
+</html>
