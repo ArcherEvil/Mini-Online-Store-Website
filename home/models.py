@@ -19,3 +19,9 @@ class Users(models.Model):
     password = models.CharField(max_length=30)
     profile_pic = models.ImageField(blank=True, null=True)
     cest = models.CharField(max_length=4000)
+
+class Features(models.Model):
+    title = models.CharField(max_length=20)
+    description = models.CharField(max_length=60)
+    image = models.ImageField(blank=True, null=True)
+    url = models.CharField(max_length=20, null=True, blank=True)

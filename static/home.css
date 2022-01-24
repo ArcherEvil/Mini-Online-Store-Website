@@ -147,7 +147,8 @@ body {
 
 .box {
     display: grid;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns:2fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr;
     box-shadow:
   3.4px 3.4px 2.7px rgba(0, 0, 0, 0.012),
   8.7px 8.7px 6.9px rgba(0, 0, 0, 0.018),
@@ -155,7 +156,7 @@ body {
   36.5px 36.5px 29.2px rgba(0, 0, 0, 0.028),
   100px 100px 80px rgba(0, 0, 0, 0.04)
 ;
-
+    transition: 300ms;
     border: 1px solid rgb(179, 179, 179);
     border-radius: 42px;
     background: #ffffff;
@@ -163,3 +164,93 @@ body {
     height: 15vw;
 
 }
+.box:hover {
+    width: 22vw;
+    height: 17vw;
+}
+
+#cur_desc {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #a8a8a8;
+
+}
+
+#cur_img {
+    justify-self: center;
+    align-self: center;
+    width: 60%;
+    transition: 200ms;
+}
+
+#cur_title {
+    color: rgb(0, 0, 0);
+    justify-self: center;
+    align-self: center;
+    font-size: 1.5vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* From cssbuttons.io by @alexmaracinaru */
+.learnmorebutton {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+    align-self: center;
+}
+
+.cta {
+    
+    border: none;
+    background: none;
+   }
+   
+   .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 10px;
+    padding-right: 15px;
+    text-transform: uppercase;
+   }
+   
+   .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active svg {
+    transform: scale(0.9);
+   }
+   
+   .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+   }
+   
+   .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+   }
+   
+   .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+   }
