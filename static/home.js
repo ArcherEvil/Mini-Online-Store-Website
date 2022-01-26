@@ -19,3 +19,4 @@ function highlightsearch(element, bool, type) {
     }
     
 }
+

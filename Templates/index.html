@@ -42,6 +42,46 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <p id="allproductstext">All Products</p>
+
+            <div class="allouterproductsbox">
+                <div class="allproductsbox">
+                    <div class="allproductsmenu">
+                        <button class="filterbutton">Filters</button>
+                    </div>
+                    <div class="productlist">
+                        {% if not pagination %}
+                        {% for product in products%}
+                        <div class="productbox">
+                            <div class="imgbox">
+                                <img id="boximg" src="{{product.image.url}}" alt="">
+                            </div>
+                            
+                            <a  href="" id="producttitle">{{product.name |truncatewords:7}}</a>
+                            <span class="favprice">
+                                <span class="favs">
+                                    <h4 id="favs">{{product.favs}}</h4>
+                                    <button id="favbutton">
+                                        <img src="../static/images/heart.png" alt="Fav" id="favimage">
+                                    </button>
+                                </span>
+                                
+                                <h4 id="price">{{product.price}}€</h4>
+
+                            </span>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+            {% if pagination %}
+            <div class="paginationbox">
+
+            </div>
+            {% endif %}
         </div>
         <footer class="footer">
 
