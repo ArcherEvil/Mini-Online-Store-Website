@@ -7,8 +7,10 @@ from .models import Features, Product
 def index(request):
     features = Features.objects.all()
     products = Product.objects.all()
-    pagination = False
 
-    if len(products) >= 30:
-        pagination = True
-    return render(request, 'index.html', {'features': features, 'products': products, 'pagination': pagination})
+    return render(request, 'index.html', {'features': features, 'products': products})
+
+def product(request, pk):
+    product = Product.objects.get(ids=pk)
+
+    return render(request, 'product.html', {'product': product})
