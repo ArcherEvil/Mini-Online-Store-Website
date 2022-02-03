@@ -15,12 +15,12 @@
 <body>
     <div class="container">
         <nav class="navbar">
-            <h3 id="logo">Ponto Gelado</h3>
-            <form name="searchform" class="searchform" action="search" method="get">
+            <button onclick="mainpage()" id="logo">Ponto Gelado</button>
+            <div class="searchform">
                 <input name="searchquery" id="inputsearch" type="text" placeholder="Click Here to Search...">
-                <input class="searchbutton" onmouseover="highlightsearch(this, true, 'search')" onmouseout="highlightsearch(this, false, 'search')" type="image" src="../static/images/search.png" alt="Search">
+                <input class="searchbutton" onclick="search()" onmouseover="highlightsearch(this, true, 'search')" onmouseout="highlightsearch(this, false, 'search')" type="image" src="../static/images/search.png" alt="Search">
                 
-            </form>
+            </div>
             <input type="image" class="cartbutton" onmouseover="highlightsearch(this, true, 'cart')" onmouseout="highlightsearch(this, false, 'cart')" src="" alt="">
         </nav>
         <div class="containerbox">
@@ -40,5 +40,6 @@
         </div>
     </div>
     <script src="{% static 'navbar.js'%}"></script>
+    <script src="{% static 'product.js'%}"></script>
 </body>
 </html>

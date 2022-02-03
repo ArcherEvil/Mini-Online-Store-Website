@@ -24,3 +24,7 @@ function highlightsearch(element, bool, type) {
     
 }
 
+
+function mainpage() {
+    window.location.href = url;
+}
