@@ -7,7 +7,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=3000)
     image = models.ImageField(blank=True, null=True)
-    price = models.IntegerField(blank=True, null=True)
+    price = models.FloatField(blank=True, null=True)
     favs = models.IntegerField(blank=True, null=True, default=0)
 
 class Users(models.Model):

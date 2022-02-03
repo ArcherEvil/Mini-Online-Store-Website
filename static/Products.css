@@ -1,0 +1,105 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x:hidden;
+    background-color: rgb(235, 235, 235);
+    margin: 0;
+}
+
+
+.container {
+    margin: 0;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100px 1fr 200px;
+}
+
+.containerbox {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    box-shadow:
+  2.3px 2.2px 2.7px rgba(0, 0, 0, 0.012),
+  5.7px 5.6px 6.9px rgba(0, 0, 0, 0.018),
+  11.7px 11.5px 14.2px rgba(0, 0, 0, 0.022),
+  24.1px 23.7px 29.2px rgba(0, 0, 0, 0.028),
+  66px 65px 80px rgba(0, 0, 0, 0.04)
+;
+
+
+    margin-top: 3vw;
+    border-radius: 5vw;
+    align-self: center;
+    background-color: white;
+    height: 50vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.8fr 1fr;
+
+}
+
+.title {
+    align-self: center;
+    font-size: 1.7vw;
+    font-weight: 700;
+}
+
+.title:hover {
+    text-decoration: underline;
+    color: rgb(62, 101, 172);
+}
+.image {
+    margin: auto;
+    width: 80%;
+    grid-row-end: 3;
+    grid-row-start: 1;
+}
+
+.options {
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 42px;
+    justify-self: center;
+    align-items: center;
+    border: solid 1px rgb(175, 175, 175);
+}
+.description {
+    color: rgb(161, 161, 161);
+    font-size: 1vw;
+}
+#price {
+    font-size: 3.5vw;
+    color: rgb(60, 98, 141);
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+
+}
+
+@media screen and (max-width: 740px) {
+    .containerbox {
+        grid-template-columns: 1fr;
+        height: 600px;
+        grid-template-rows: 0.1fr 0.3fr 0.05fr 1fr;
+    }
+    .title {
+        font-size: 3vw;
+    }
+    .image {
+        grid-row: 2;
+        width: 50%;
+    }
+    .options {
+        margin: auto;
+        width: 70%;
+        height: 50%;
+        grid-row: 4;
+    }
+}

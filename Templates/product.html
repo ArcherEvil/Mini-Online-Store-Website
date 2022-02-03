@@ -1,12 +1,44 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'Products.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'buynowbutton.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <title>{{product.name}} - PontoGelado</title>
 </head>
 <body>
-    {{product.name}}
+    <div class="container">
+        <nav class="navbar">
+            <h3 id="logo">Ponto Gelado</h3>
+            <form name="searchform" class="searchform" action="search" method="get">
+                <input name="searchquery" id="inputsearch" type="text" placeholder="Click Here to Search...">
+                <input class="searchbutton" onmouseover="highlightsearch(this, true, 'search')" onmouseout="highlightsearch(this, false, 'search')" type="image" src="../static/images/search.png" alt="Search">
+                
+            </form>
+            <input type="image" class="cartbutton" onmouseover="highlightsearch(this, true, 'cart')" onmouseout="highlightsearch(this, false, 'cart')" src="" alt="">
+        </nav>
+        <div class="containerbox">
+            <img src="{{product.image.url}}" alt="" class="image">
+            <p class="title">{{product.name}}</p>
+            <div class="options">
+                <p id="price">{{product.price}}€</p>
+                <a class="fancy" href="#">
+                    <span class="top-key"></span>
+                    <span class="text">Buy Now!</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                  </a>
+            </div>
+                <p class="description">{{product.description}}</p>
+
+        </div>
+    </div>
+    <script src="{% static 'navbar.js'%}"></script>
 </body>
 </html>
