@@ -1,12 +1,58 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'search.css' %}">
     <title>{{search}} - Ponto Gelado</title>
 </head>
 <body>
-    
+    <div class="container">
+        <nav class="navbar">
+            <button onclick="mainpage()" id="logo">Ponto Gelado</button>
+            <div class="searchform">
+                <input name="searchquery" id="inputsearch" type="text" placeholder="Click Here to Search...">
+                <input class="searchbutton" onclick="search()" onmouseover="highlightsearch(this, true, 'search')" onmouseout="highlightsearch(this, false, 'search')" type="image" src="../static/images/search.png" alt="Search">
+                
+            </div>
+            <input type="image" class="cartbutton" onmouseover="highlightsearch(this, true, 'cart')" onmouseout="highlightsearch(this, false, 'cart')" src="" alt="">
+        </nav>
+        {% if length == 0%}
+        <p id="nothing">No Results. Try Again :(</p>
+        {% else %}
+        <main>
+            <p id="title">Search Results to: {{search}}</p>
+            <div class="productlist">
+                {% for product in results  %}
+                    <div class="productbox">
+                    <div class="imgbox">
+                        <img id="boximg" src="{{product.image.url}}" alt="">
+                    </div>
+                    
+                    <a  href="../product/{{product.ids}}" id="producttitle">{{product.name |truncatewords:7}}</a>
+                    <span class="favprice">
+                        <span class="favs">
+                            <h4 id="favs">{{product.favs}}</h4>
+                            <button id="favbutton">
+                                <img src="../static/images/heart.png" alt="Fav" id="favimage">
+                            </button>
+                        </span>
+                        
+                        <h4 id="price">{{product.price}}€</h4>
+
+                    </span>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+        {% endif %}
+    </div>
+    <script src="{% static 'navbar.js'%}"></script>
+    <script src="{% static 'search.js'%}"></script>
 </body>
 </html>
